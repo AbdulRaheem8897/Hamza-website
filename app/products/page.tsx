@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { ProductsExplorer } from "@/components/ProductsExplorer";
-import { Crest } from "@/components/Crest";
 import { categories, type Category } from "@/data/products";
 import { PageHeader } from "@/components/PageHeader";
 
@@ -31,7 +30,7 @@ export default async function ProductsPage({
       </section>
 
       <div className="rule-diamond pb-20">
-        <Crest className="h-5 w-5" />
+        <span className="block h-2 w-2 rotate-45 bg-[var(--color-gold)]" />
       </div>
     </>
   );

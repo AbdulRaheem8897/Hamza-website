@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Crest } from "./Crest";
+import { Logo } from "./Logo";
 import { site, whatsappLink } from "@/lib/site";
 import { WhatsAppIcon, MailIcon, PinIcon } from "./icons";
 
@@ -11,8 +11,8 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 sm:px-8 md:grid-cols-12">
         {/* brand */}
         <div className="md:col-span-5">
-          <div className="flex items-center gap-3">
-            <Crest className="h-12 w-12 text-[var(--color-gold)]" />
+          <div className="flex items-center gap-4">
+            <Logo rounded="rounded-xl" className="h-16" />
             <div>
               <p className="font-display text-2xl font-bold">{site.brand}</p>
               <p className="text-[0.6rem] uppercase tracking-[0.32em] text-[var(--color-gold-soft)]">

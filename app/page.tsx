@@ -4,7 +4,7 @@ import { Hero } from "@/components/Hero";
 import { Reveal } from "@/components/Reveal";
 import { ProductCard } from "@/components/ProductCard";
 import { ArrowIcon, HandIcon, ShieldCheck, SparkIcon, TruckIcon } from "@/components/icons";
-import { Crest } from "@/components/Crest";
+import { Logo } from "@/components/Logo";
 import { featuredProducts, products, categories } from "@/data/products";
 import { site } from "@/lib/site";
 
@@ -51,7 +51,7 @@ export default function HomePage() {
           <p className="eyebrow">Browse</p>
           <h2 className="mt-3 font-display text-4xl sm:text-5xl">Shop by Collection</h2>
           <div className="rule-diamond mt-5">
-            <Crest className="h-5 w-5" />
+            <span className="block h-2 w-2 rotate-45 bg-[var(--color-gold)]" />
           </div>
         </Reveal>
 
@@ -108,7 +108,7 @@ export default function HomePage() {
 
           <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
             {featuredProducts.slice(0, 4).map((p, i) => (
-              <Reveal key={p.asin} delay={i * 0.06}>
+              <Reveal key={p.asin} delay={i * 0.06} className="h-full">
                 <ProductCard product={p} />
               </Reveal>
             ))}
@@ -167,7 +167,7 @@ export default function HomePage() {
       <section className="grain relative overflow-hidden bg-[var(--color-wine-dark)] py-20 text-center text-[var(--color-ivory)] sm:py-24">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,162,75,0.15),_transparent_60%)]" />
         <Reveal className="relative z-10 mx-auto max-w-2xl px-6">
-          <Crest className="mx-auto h-14 w-14 text-[var(--color-gold)]" />
+          <Logo rounded="rounded-2xl" className="mx-auto h-24" />
           <h2 className="mt-6 font-display text-4xl text-[var(--color-ivory)] sm:text-5xl">
             Bring home a piece of heritage
           </h2>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Crest } from "./Crest";
+import { Logo } from "./Logo";
 import { ArrowIcon } from "./icons";
 import { site } from "@/lib/site";
 
@@ -13,24 +13,19 @@ export function Hero() {
     <section className="grain relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-[var(--color-wine-dark)] text-[var(--color-ivory)]">
       {/* radial glow */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(201,162,75,0.18),_transparent_55%)]" />
-      {/* giant watermark crest */}
-      <motion.div
-        initial={{ opacity: 0, scale: 1.1 }}
-        animate={{ opacity: 0.06, scale: 1 }}
-        transition={{ duration: 1.6, ease }}
-        className="pointer-events-none absolute -right-10 top-1/2 hidden -translate-y-1/2 text-[var(--color-gold)] md:block"
-      >
-        <Crest className="h-[42rem] w-[42rem]" />
-      </motion.div>
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 py-32 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease }}
-          className="mb-7 flex justify-center"
+          initial={{ opacity: 0, y: 18, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.9, ease }}
+          className="mb-8 flex justify-center"
         >
-          <Crest className="h-20 w-20 text-[var(--color-gold)]" />
+          <Logo
+            priority
+            rounded="rounded-2xl"
+            className="h-28 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)] sm:h-32"
+          />
         </motion.div>
 
         <motion.p

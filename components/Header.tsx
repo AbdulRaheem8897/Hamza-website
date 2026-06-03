@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Crest } from "./Crest";
+import { Logo } from "./Logo";
 import { site } from "@/lib/site";
 
 const nav = [
@@ -54,8 +54,13 @@ export function Header() {
         <Link
           href="/"
           className="group flex items-center gap-3 text-[var(--color-ivory)]"
+          aria-label={site.brandFull}
         >
-          <Crest className="h-9 w-9 text-[var(--color-gold)] transition-transform duration-500 group-hover:scale-105" />
+          <Logo
+            priority
+            rounded="rounded-lg"
+            className="h-11 transition-transform duration-500 group-hover:scale-[1.03]"
+          />
           <span className="flex flex-col leading-none">
             <span className="font-display text-xl font-bold tracking-wide">
               {site.brand}

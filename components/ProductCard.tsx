@@ -7,7 +7,7 @@ import { BuyOnAmazon, WhatsAppEnquiry } from "./CtaButtons";
 export function ProductCard({ product }: { product: Product }) {
   const { asin, name, price, images, category, size, tag, badge } = product;
   return (
-    <article className="lift group relative flex flex-col overflow-hidden rounded-[14px] border border-[var(--color-gold)]/25 bg-white shadow-[0_18px_40px_-28px_rgba(28,23,20,0.45)]">
+    <article className="lift group relative flex h-full flex-col overflow-hidden rounded-[14px] border border-[var(--color-gold)]/25 bg-white shadow-[0_18px_40px_-28px_rgba(28,23,20,0.45)]">
       {badge && (
         <span className="absolute left-3 top-3 z-10 rounded-full bg-[var(--color-wine)] px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-ivory)]">
           {badge}
@@ -55,7 +55,7 @@ export function ProductCard({ product }: { product: Product }) {
 
         <p className="mt-1 text-xs italic text-[var(--color-muted)]">{tag}</p>
 
-        <div className="mt-3 flex items-baseline gap-2">
+        <div className="mt-auto flex items-baseline gap-2 pt-3">
           <span className="font-display text-2xl text-[var(--color-wine)]">
             {inr(price)}
           </span>

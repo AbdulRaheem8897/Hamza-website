@@ -70,7 +70,7 @@ export function ProductsExplorer({ initialCategory = "All" }: { initialCategory?
 
       <motion.div
         layout
-        className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4"
+        className="flex flex-wrap justify-center gap-4 sm:gap-6"
       >
         <AnimatePresence mode="popLayout">
           {list.map((p) => (
@@ -81,6 +81,7 @@ export function ProductsExplorer({ initialCategory = "All" }: { initialCategory?
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.96 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="w-[calc(50%-0.5rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.125rem)]"
             >
               <ProductCard product={p} />
             </motion.div>

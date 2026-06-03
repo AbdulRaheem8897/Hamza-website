@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
-import { Crest } from "@/components/Crest";
 import { ArrowIcon, HandIcon, ShieldCheck, SparkIcon } from "@/components/icons";
 import { products } from "@/data/products";
 import { site } from "@/lib/site";
@@ -99,7 +98,7 @@ export default function AboutPage() {
           <p className="eyebrow">What we stand for</p>
           <h2 className="mt-3 font-display text-3xl sm:text-4xl">Our Promise</h2>
           <div className="rule-diamond mt-5">
-            <Crest className="h-5 w-5" />
+            <span className="block h-2 w-2 rotate-45 bg-[var(--color-gold)]" />
           </div>
         </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
