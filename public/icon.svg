@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="10" fill="#5a1414"/>
+  <path d="M20 14h24v22c0 9-7 13-12 15-5-2-12-6-12-15V14Z" fill="none" stroke="#c9a24b" stroke-width="2"/>
+  <path d="M26 12l3 4 3-4 3 4 3-4v3H26v-3Z" fill="#c9a24b"/>
+  <text x="32" y="34" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="16" fill="#faf6ef">SH</text>
+</svg>

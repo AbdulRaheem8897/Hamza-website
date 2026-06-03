@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+/* ============================================================
+   SH ROYALS — Royal Heritage design tokens
+   ============================================================ */
+@theme {
+  /* Surfaces */
+  --color-ivory: #faf6ef;
+  --color-cream: #f3ecdf;
+  --color-parchment: #efe6d3;
+  --color-sand: #e7dcc6;
+
+  /* Ink */
+  --color-ink: #1c1714;
+  --color-ink-soft: #4a3f37;
+  --color-muted: #7a6c5d;
+
+  /* Wine / maroon (from the crest) */
+  --color-wine: #7b1e1e;
+  --color-wine-deep: #5a1414;
+  --color-wine-dark: #3f0e0e;
+
+  /* Gold */
+  --color-gold: #c9a24b;
+  --color-gold-soft: #e0c989;
+  --color-gold-deep: #a8842f;
+
+  /* Fonts (bound in layout via next/font) */
+  --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Easing */
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  --background: var(--color-ivory);
+  --foreground: var(--color-ink);
+}
+
+* {
+  border-color: color-mix(in oklab, var(--color-gold) 30%, transparent);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-wine);
+  color: var(--color-ivory);
+}
+
+/* ---- Utility classes ---- */
+.eyebrow {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-gold-deep);
+}
+
+.font-display { font-family: var(--font-display); }
+.font-serif-elegant { font-family: var(--font-serif); }
+
+/* Paper grain texture overlay */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Thin gold divider with a center diamond */
+.rule-diamond {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--color-gold);
+}
+.rule-diamond::before,
+.rule-diamond::after {
+  content: "";
+  height: 1px;
+  width: 3rem;
+  background: linear-gradient(to right, transparent, var(--color-gold));
+}
+.rule-diamond::after {
+  background: linear-gradient(to left, transparent, var(--color-gold));
+}
+
+/* Gold gradient text */
+.text-gilt {
+  background: linear-gradient(180deg, var(--color-gold-soft), var(--color-gold-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hover lift */
+.lift {
+  transition: transform 0.5s var(--ease-soft), box-shadow 0.5s var(--ease-soft);
+}
+.lift:hover {
+  transform: translateY(-6px);
+}
+
+/* Animated underline links */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-soft);
+}
+.link-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-cream); }
+::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--color-wine) 70%, var(--color-gold));
+  border-radius: 999px;
+  border: 2px solid var(--color-cream);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
