@@ -12,7 +12,7 @@ export const site = {
 
   whatsappNumber: "918688204554",
   whatsappDisplay: "+91 86882 04554",
-  email: "mohammed@hiveinspect.com",
+  email: "shamza778866@gmail.com",
 
   amazonStore: "https://www.amazon.in/s?k=SH-ROYALS",
 
